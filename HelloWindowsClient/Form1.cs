@@ -16,5 +16,16 @@ namespace HelloWindowsClient
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HelloService.HelloServiceClient client = new HelloService.HelloServiceClient("NetTcpBinding_IHelloService");
+            label1.Text = client.GetMessage(textBox1.Text);
+        }
     }
 }
